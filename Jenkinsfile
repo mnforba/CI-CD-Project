@@ -11,7 +11,7 @@ pipeline {
         string(name: 'Region', description: "Region of ECR", defaultValue: 'us-east-1')
         string(name: 'ImageName', description: "name of the docker build", defaultValue: 'javaapp')
         string(name: 'ImageTag', description: "tag of the docker build", defaultValue: 'v1')
-        string(name: 'DockerHubUser', description: "name of the Application", defaultValue: 'ganasai88')
+        string(name: 'DockerHubUser', description: "name of the Application", defaultValue: 'mnforba')
         string(name: 'cluster', description: "name of the EKS Cluster", defaultValue: 'demo-cluster1')
     }
  
@@ -32,7 +32,7 @@ pipeline {
             )
             }
         }
-         /* 
+        
        stage('Unit Test maven'){
                when{expression{params.action == "create"}}      
             steps{
@@ -83,7 +83,7 @@ pipeline {
                }
             }
         }
-         */
+         
          
         stage('Docker Image Build'){
               when{expression{params.action == "create"}}       
@@ -94,7 +94,7 @@ pipeline {
                }
             }
         }
-        /* 
+         
         stage('Docker Image scan'){
               when{expression{params.action == "create"}}       
             steps{
@@ -122,8 +122,8 @@ pipeline {
                }
             }
         }
-        */
-       /* 
+        
+       /*
         stage('Create EKS cluster: Terraform'){
               when{expression{params.action == "create"}}       
             steps{
